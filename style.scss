@@ -1,0 +1,51 @@
+//variables
+$primarycolor: rgb(83, 83, 211);
+$secondarycolor: rgb(193, 196, 22);
+$linkcolor:rgb(3, 248, 3);
+$width: 10px;
+
+
+//nesting
+.para{
+    color:$primarycolor;
+    a{
+        color: $linkcolor; 
+    }
+}
+button{
+    background-color: $primarycolor;
+    border: 2px solid $primarycolor;
+    &:hover{
+        background-color:$secondarycolor;
+    }
+
+}
+//importing file 
+@import "new";     //file name is _new.scss
+
+//mixins
+
+@mixin mainclass{
+    background-color: rgb(233, 219, 219);
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.bot{
+    @include mainclass;
+}
+.list{
+    @include mainclass;
+    background-color: khaki; //overridding background property of mixin
+}
+
+//arithmatic opertion
+.box{
+    @include mainclass;
+    border:2px solid black;
+    background-color: lightcoral;
+    width: 40px + ($width)/2 + 10;
+    height:60px+($width)*2;
+    
+}
+
